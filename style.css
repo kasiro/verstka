@@ -1,0 +1,251 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@keyframes HeaderOpen {
+  from {
+    width: 100px;
+  }
+  to {
+    width: 1890px;
+  }
+}
+@keyframes MenuOpen {
+  from {
+    margin-top: -999px;
+  }
+  to {
+    margin-top: 0px;
+  }
+}
+@keyframes ContentOpen {
+  from {
+    margin-top: -999px;
+  }
+  to {
+    margin-top: 0px;
+  }
+}
+.pulse {
+  background-color: black;
+  border-radius: 50%;
+  animation: pulse 0.7s ease-out;
+  transform: scale(0);
+  position: absolute;
+  overflow: hidden;
+}
+
+@keyframes pulse {
+  to {
+    transform: scale(2);
+    background-color: #fff;
+    opacity: 0;
+    overflow: hidden;
+  }
+}
+@keyframes search {
+  from {
+    transition: 0.3s;
+  }
+  to {
+    transition: 0.3s;
+  }
+}
+body {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+body #root {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  position: inherit;
+}
+body #root header {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+body #root header .headerAnim {
+  justify-content: space-around;
+  display: flex;
+  width: 1920px;
+  height: 60px;
+  box-shadow: 0px 0 12px 10px #ccc;
+  background-color: #6760FB;
+}
+body #root header .headerAnim .search {
+  display: flex;
+  align-items: center;
+}
+body #root header .headerAnim .search .SearchInput {
+  display: flex;
+  position: absolute;
+  transition: 0.3s;
+  background-color: #4c46bb;
+  width: 35px;
+  height: 35px;
+  outline: none;
+  border: none;
+  color: #fff;
+  border-radius: 50px;
+  margin-left: 300px;
+}
+body #root header .headerAnim .search .SearchInput.activeInput {
+  margin-left: -400px;
+  transition: 0.3s;
+  width: 700px;
+  animation: search;
+  padding-left: 30px;
+}
+body #root header .headerAnim .search .searhButton {
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  border: none;
+  background-color: #6760FB;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 50px;
+  color: #fff;
+  margin-left: 300px;
+}
+body #root header .headerAnim .search .searhButton:hover {
+  cursor: pointer;
+}
+body #root header .headerAnim .search .searhButton ion-icon {
+  font-size: 20px;
+}
+body #root header .headerAnim .search .searhButton.activeButton {
+  background-color: #4c46bb;
+  box-shadow: none;
+}
+body #root header .headerAnim .text {
+  margin-left: 80px;
+  margin-top: 10px;
+  font-size: 30px;
+  display: flex;
+  color: #fff;
+  font-weight: bold;
+  user-select: none;
+}
+body #root header .headerAnim .text:hover {
+  cursor: pointer;
+}
+body #root header .headerAnim .account {
+  margin-top: 0.8%;
+  margin-left: 80px;
+  color: #fff;
+  display: flex;
+}
+body #root header .headerAnim .active {
+  animation: HeaderOpen 1s;
+  width: 1890px;
+}
+body #root header .headerAnim .menu {
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 55px;
+  height: 50px;
+  margin-left: 25px;
+  margin-top: 5px;
+  background-color: white;
+}
+body #root header .headerAnim .menu:hover {
+  border-radius: 12px;
+  cursor: pointer;
+  background-color: white;
+}
+body #root header .headerAnim .menu:hover div {
+  background-color: #6760FB;
+}
+body #root header .headerAnim .menu div {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 3px 0;
+  border-radius: 10px;
+}
+body #root .sidebarMenu {
+  display: flex;
+  margin-top: 10px;
+  margin-right: 10px;
+  border-radius: 12px;
+  padding: 5px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  overflow: hidden;
+}
+body #root .sidebarMenu:hover {
+  cursor: pointer;
+}
+body #root .sidebarMenu .iconMenu {
+  align-items: center;
+  margin-right: -30px;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  font-size: 40px;
+}
+body #root .sidebar {
+  border-radius: 12px;
+  width: 170px;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+}
+body #root .sidebar .active {
+  transition: 0.3s;
+  animation: MenuOpen 0.3s;
+}
+body #root .textbtn {
+  width: 140px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  margin-top: 10px;
+  font-size: 20px;
+  display: flex;
+  color: black;
+  background-color: white;
+  font-weight: bold;
+  user-select: none;
+  border: none;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+body #root .textbtn:hover {
+  cursor: pointer;
+}
+body #root .content {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
+  display: flex;
+  width: 80%;
+  height: 90%;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+body #root .content .active {
+  animation: ContentOpen 1.2s;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,24 @@
+
+@mixin size($width, $height) {
+	width: $width;
+	height: $height;
+}
+@mixin min-size($width, $height) {
+	min-width: $width;
+	min-height: $height;
+}
+@mixin main-radius($pos, $radius) {
+	@if $pos == top or $pos == bottom {
+		border-#{$pos}-left-radius: $radius;
+		border-#{$pos}-right-radius: $radius;
+	}
+}
+@mixin shadow($color) {
+	box-shadow: 0 8px 15px $color;
+}
+@mixin shadowBlock {
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.50);
+}
+@mixin shadowButton {
+	box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
