@@ -13,10 +13,14 @@
 }
 @keyframes MenuOpen {
   from {
-    margin-top: -999px;
+    position: absolute;
+    transition: 0.3s;
+    margin-left: -999px;
   }
   to {
-    margin-top: 0px;
+    position: absolute;
+    transition: 0.3s;
+    margin-left: 0px;
   }
 }
 @keyframes ContentOpen {
@@ -25,23 +29,6 @@
   }
   to {
     margin-top: 0px;
-  }
-}
-.pulse {
-  background-color: black;
-  border-radius: 50%;
-  animation: pulse 0.7s ease-out;
-  transform: scale(0);
-  position: absolute;
-  overflow: hidden;
-}
-
-@keyframes pulse {
-  to {
-    transform: scale(2);
-    background-color: #fff;
-    opacity: 0;
-    overflow: hidden;
   }
 }
 @keyframes search {
@@ -77,7 +64,7 @@ body #root header .headerAnim {
   width: 1920px;
   height: 60px;
   box-shadow: 0px 0 12px 10px #ccc;
-  background-color: #6760FB;
+  background-color: #4d5bf9;
 }
 body #root header .headerAnim .search {
   display: flex;
@@ -87,7 +74,7 @@ body #root header .headerAnim .search .SearchInput {
   display: flex;
   position: absolute;
   transition: 0.3s;
-  background-color: #4c46bb;
+  background-color: #3541bd;
   width: 35px;
   height: 35px;
   outline: none;
@@ -104,6 +91,7 @@ body #root header .headerAnim .search .SearchInput.activeInput {
   padding-left: 30px;
 }
 body #root header .headerAnim .search .searhButton {
+  transition: 0.7s;
   display: flex;
   position: absolute;
   justify-content: center;
@@ -111,7 +99,7 @@ body #root header .headerAnim .search .searhButton {
   width: 35px;
   height: 35px;
   border: none;
-  background-color: #6760FB;
+  background-color: #4d5bf9;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
   border-radius: 50px;
   color: #fff;
@@ -121,13 +109,14 @@ body #root header .headerAnim .search .searhButton:hover {
   cursor: pointer;
 }
 body #root header .headerAnim .search .searhButton ion-icon {
+  transition: 0.7s;
   font-size: 20px;
 }
 body #root header .headerAnim .search .searhButton.activeButton {
-  background-color: #4c46bb;
+  background-color: #3541bd;
   box-shadow: none;
 }
-body #root header .headerAnim .text {
+body #root header .headerAnim #mylogo {
   margin-left: 80px;
   margin-top: 10px;
   font-size: 30px;
@@ -136,14 +125,8 @@ body #root header .headerAnim .text {
   font-weight: bold;
   user-select: none;
 }
-body #root header .headerAnim .text:hover {
+body #root header .headerAnim #mylogo:hover {
   cursor: pointer;
-}
-body #root header .headerAnim .account {
-  margin-top: 0.8%;
-  margin-left: 80px;
-  color: #fff;
-  display: flex;
 }
 body #root header .headerAnim .active {
   animation: HeaderOpen 1s;
@@ -175,10 +158,130 @@ body #root header .headerAnim .menu div {
   margin: 3px 0;
   border-radius: 10px;
 }
+body #root header .right {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-bottom: 8px;
+}
+body #root header .right .account {
+  cursor: pointer;
+  margin-top: 0.8%;
+  margin-left: 80px;
+  color: #fff;
+  display: flex;
+}
+body #root header .right .account ion-icon {
+  margin-right: 5px;
+  font-size: 27px;
+}
+body #root header .right .account.name {
+  user-select: none;
+}
+body #root header .right .help {
+  cursor: pointer;
+  display: flex;
+  color: white;
+  align-items: center;
+}
+body #root header .right .help ion-icon {
+  margin-right: 5px;
+  font-size: 27px;
+}
+body #root header .right .help .text {
+  user-select: none;
+}
+body #root #block-for-slider {
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+body #root #block-for-slider #viewport {
+  width: 100%;
+  display: table;
+  position: relative;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+body #root #block-for-slider #viewport #slidewrapper {
+  position: relative;
+  width: 400%;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
+  -webkit-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+body #root #block-for-slider #viewport #slidewrapper ul, body #root #block-for-slider #viewport #slidewrapper li {
+  margin: 0;
+  padding: 0;
+}
+body #root #block-for-slider #viewport #slidewrapper li {
+  width: 25%;
+  list-style: none;
+  display: inline;
+  float: left;
+}
+body #root #block-for-slider #viewport #slidewrapper .slide-img {
+  width: 100%;
+}
+body #root #block-for-slider #viewport #prev-btn, body #root #block-for-slider #viewport #next-btn {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  color: #fff;
+  top: calc(50% - 25px);
+}
+body #root #block-for-slider #viewport #prev-btn:hover, body #root #block-for-slider #viewport #next-btn:hover {
+  cursor: pointer;
+}
+body #root #block-for-slider #viewport #prev-btn {
+  left: 20px;
+}
+body #root #block-for-slider #viewport #next-btn {
+  right: 20px;
+}
+body #root #block-for-slider #viewport #nav-btns {
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+body #root #block-for-slider #viewport .slide-nav-btn [name=mail] {
+  border-radius: 50%;
+}
+body #root #block-for-slider #viewport .slide-nav-btn {
+  position: relative;
+  display: inline-block;
+  list-style: none;
+  width: 50px;
+  height: 50px;
+  font-size: 30px;
+  color: #ccc;
+  margin: 3px;
+}
+body #root #block-for-slider #viewport .slide-nav-btn.active {
+  color: #4d5bf9;
+}
+body #root #block-for-slider #viewport .slide-nav-btn:hover {
+  cursor: pointer;
+}
 body #root .sidebarMenu {
   display: flex;
-  margin-top: 10px;
-  margin-right: 10px;
+  position: absolute;
+  margin-top: 150px;
+  margin-left: -1800px;
   border-radius: 12px;
   padding: 5px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
@@ -203,16 +306,21 @@ body #root .sidebarMenu .iconMenu {
 body #root .sidebar {
   border-radius: 12px;
   width: 170px;
-  height: 90%;
-  display: flex;
+  height: 70%;
+  display: none;
   align-items: center;
   flex-direction: column;
   justify-content: space-evenly;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
 }
-body #root .sidebar .active {
+body #root .sidebar.activeSidebar {
+  display: block;
+  margin-top: 10px;
   transition: 0.3s;
-  animation: MenuOpen 0.3s;
+  animation: MenuOpen;
+}
+body #root .sidebar .punct {
+  margin-left: 10%;
 }
 body #root .textbtn {
   width: 140px;
@@ -237,7 +345,7 @@ body #root .content {
   background-color: white;
   border-radius: 12px;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.5);
-  display: flex;
+  display: none;
   width: 80%;
   height: 90%;
   justify-content: center;

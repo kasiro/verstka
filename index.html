@@ -9,16 +9,24 @@
     <div id="root">
 		<header>
 			<div class="headerAnim">
-				<div class="text">CAST</div>
+				<div id="mylogo">CAST</div>
 				<div class="search">
-					<input type="text" placeholder="Search" class="SearchInput">
-					<button class="searhButton" onclick="seachText()">
+					<input type="text" placeholder="Search" class="SearchInput" onkeyup="searchText()">
+					<button class="searhButton" onclick="seachToggle()">
 						<ion-icon name="search"></ion-icon>
 					</button>
 				</div>
-				<div class="account">
-					<div class="icon"></div>
-					<div class="name">kasiro</div>
+				<div class="right">
+					<div class="account">
+						<div class="icon">
+							<ion-icon name="person-circle"></ion-icon>
+						</div>
+						<div class="name">kasiro</div>
+					</div>
+					<div class="help">
+						<ion-icon name="people"></ion-icon>
+						<div class="text">Чат поддержки</div>
+					</div>
 				</div>
 				<div class="menu">
 					<div></div>
@@ -26,14 +34,43 @@
 					<div></div>
 				</div>
 			</div>
-			
 		</header>
-		<div class="sidebarMenu">
+		<div id="block-for-slider">
+			<div id="viewport">
+				<ul id="slidewrapper">
+					<li class="slide"><img src="img/1.jpg" alt="1" class="slide-img"></li>
+					<li class="slide"><img src="img/2.jpg" alt="2" class="slide-img"></li>
+					<li class="slide"><img src="img/3.jpg" alt="3" class="slide-img"></li>
+					<li class="slide"><img src="img/4.jpg" alt="4" class="slide-img"></li>
+				</ul>
+
+				<div id="prev-next-btns">
+					<ion-icon id="prev-btn"name="chevron-back-outline"></ion-icon>
+					<ion-icon id="next-btn"name="chevron-forward-outline"></ion-icon>
+				</div>
+
+				<ul id="nav-btns">
+					<li class="slide-nav-btn">
+						<ion-icon name="medical"></ion-icon>
+					</li>
+					<li class="slide-nav-btn">
+						<ion-icon name="moon"></ion-icon>
+					</li>
+					<li class="slide-nav-btn">
+						<ion-icon name="mail"></ion-icon>
+					</li>
+					<li class="slide-nav-btn">
+						<ion-icon name="qr-code"></ion-icon>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="sidebarMenu" onclick="touchMenu()">
 			<div class="iconMenu">
 				<ion-icon name="menu-outline"></ion-icon>
 			</div>
 		</div>
-		<div class="sidebar active">
+		<div class="sidebar">
 			<div class="punct">
 				<button class="textbtn">text 1</button>
 			</div>
@@ -69,17 +106,6 @@
 			main
 		</div>
 	</div>
-	<script>
-		function seachText(){
-			$('.SearchInput').addClass('activeInput');
-			$('.searhButton').addClass('activeButton');
-		}
-		// setTimeout(() => {
-		// 	$('.headerAnim').addClass('active');
-		// 	$('.sidebar').addClass('active');
-		// 	$('.content').addClass('active');
-		// }, 1000);
-	</script>
 	<script
 		type="module"
 		src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
@@ -96,5 +122,6 @@
 		crossorigin="anonymous"
 	>
 	</script>
+	<script src="./js/main.js"></script>
   </body>
 </html>
