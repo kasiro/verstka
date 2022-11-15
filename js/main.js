@@ -83,12 +83,12 @@ function prevSlide() {
 }
 
 $(document).ready(() => {
-	switchInterval = setInterval(nextSlide, slideInterval);
-	$('#viewport').hover(() => {
-		clearInterval(switchInterval);
-	}, () => {
-		switchInterval = setInterval(nextSlide, slideInterval);
-	});
+	// switchInterval = setInterval(nextSlide, slideInterval);
+	// $('#viewport').hover(() => {
+	// 	clearInterval(switchInterval);
+	// }, () => {
+	// 	switchInterval = setInterval(nextSlide, slideInterval);
+	// });
 	$('.slide-nav-btn:nth-of-type(' + slideNow + ')')
 			.addClass('active');
 	previd = 1;
