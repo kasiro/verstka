@@ -7,11 +7,18 @@
 	min-width: $width;
 	min-height: $height;
 }
+@mixin max-size($width, $height) {
+	max-width: $width;
+	max-height: $height;
+}
 @mixin main-radius($pos, $radius) {
 	@if $pos == top or $pos == bottom {
 		border-#{$pos}-left-radius: $radius;
 		border-#{$pos}-right-radius: $radius;
 	}
+}
+@mixin radius($radius) {
+	border-radius: $radius;
 }
 @mixin shadow($color) {
 	box-shadow: 0 8px 15px $color;

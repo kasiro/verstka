@@ -1,0 +1,62 @@
+@import '../scss/mixins';
+@import '../scss/vars';
+.page {
+	display: flex;
+	@include size(1920px, 200px);
+	align-items: center;
+	justify-content: center;
+	.tags {
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+		text-decoration: none;
+		@include size(800px, 600px);
+		@include shadowBlock();
+		@include radius(15px);
+		.tag {
+			.icon {
+				position: relative;
+				display: flex;
+				justify-content: flex-end;
+				font-size: 40px;
+			}
+			.text {
+				float: left;
+				font-weight: bold;
+				font-size: 17px;
+			}
+			ion-icon {
+				@include radius(50px);
+			}
+			&:hover {
+				.text {
+					background: linear-gradient(0.25turn, $color_g_left, $color_g_right);
+					-webkit-background-clip: text;
+					-webkit-text-fill-color: transparent;
+				}
+				ion-icon {
+					// color: #4d5bf9;
+					color: #fff;
+					background: linear-gradient(0.25turn, $color_g_left, $color_g_right);
+					transition: 0.2s;
+					
+				}
+				cursor: pointer;
+				transition: 0.5s;
+				box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+			}
+			position: relative;
+			user-select: none;
+			padding: 20px;
+			margin-top: 20px;
+			margin-left: 20px;
+			min-width: 200px;
+			max-width: 400px;
+			color: black;
+			max-height: 90px;
+			border-radius: 15px;
+			background: white;
+			transition: 0.5s;
+		}
+	}
+}

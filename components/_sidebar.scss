@@ -1,0 +1,41 @@
+.sidebarMenu {
+	display: flex;
+	position: absolute;
+	margin-top: 150px;
+	margin-left: -1800px;
+	border-radius: 12px;
+	padding: 5px;
+	@include shadowButton();
+	@include size(40px, 40px);
+	@include min-size(40px, 40px);
+	&:hover {
+		cursor: pointer;
+	}
+	overflow: hidden;
+	& .iconMenu {
+		align-items: center;
+		margin-right: -30px;
+		@include size(40px, 40px);
+		@include min-size(40px, 40px);
+		font-size: 40px;
+	}
+}
+.sidebar {
+	&.activeSidebar {
+		display: block;
+		margin-top: 10px;
+		transition: 0.3s;
+		animation: MenuOpen;
+	}
+	border-radius: 12px;
+	width: 170px;
+	height: 70%;
+	display: none;
+	align-items: center;
+	flex-direction: column;
+	justify-content: space-evenly;
+	@include shadowBlock();
+	.punct {
+		margin-left: 10%;
+	}
+}

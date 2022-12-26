@@ -1,20 +1,12 @@
-
-function seachToggle(){
-	$('.SearchInput').toggleClass('activeInput');
-	$('.searhButton').toggleClass('activeButton');
-	let attr = $('.searhButton').find('ion-icon').attr('name');
-	if (attr == 'search'){
-		$('.searhButton').find('ion-icon').attr('name', 'close');
-	} else {
-		$('.searhButton').find('ion-icon').attr('name', 'search');
+function getText(event){
+	if (event.key === 'Enter'){
+		let findtext = $('.SearchInput').val();
+		return findtext;
 	}
+	return false;
 }
-function searchText(e){
-	console.log(e);
-	// if (e.code == 'Enter'){
-	// 	let findtext = $('.SearchInput').val();
-	// 	console.log(findtext);
-	// }
+function searchText(text){
+	console.log('text:', text);
 }
 function touchMenu(){
 	$('.sidebar').toggleClass('activeSidebar');
@@ -89,6 +81,22 @@ $(document).ready(() => {
 	// }, () => {
 	// 	switchInterval = setInterval(nextSlide, slideInterval);
 	// });
+	$('.SearchInput').on('keyup', function (event){
+		let text = getText(event);
+		if (text !== false){
+			searchText(text);
+		}
+	});
+	$('.searhButton').click(() => {
+		$('.SearchInput').toggleClass('activeInput');
+		$('.searhButton').toggleClass('activeButton');
+		let attr = $('.searhButton').find('ion-icon').attr('name');
+		if (attr == 'search'){
+			$('.searhButton').find('ion-icon').attr('name', 'close');
+		} else {
+			$('.searhButton').find('ion-icon').attr('name', 'search');
+		}
+	});
 	$('.slide-nav-btn:nth-of-type(' + slideNow + ')')
 			.addClass('active');
 	previd = 1;
